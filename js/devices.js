@@ -26,7 +26,7 @@ async function renameDevice(key) {
       "Content-Type": "application/json",
       "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
     },
-    body: JSON.stringify({key: key, name: value}),
+    body: JSON.stringify({key: key, name: name.value}),
     method: 'POST'
   })
   let res = await raw.json();
@@ -37,16 +37,18 @@ async function renameDevice(key) {
     window.location.reload()
   }
 }
-async function addDevice(key, name){
+async function addDevice(key, name, watts, tempoCons){
   if(!key) return
+
   let raw = await fetch('/api/adddevice', {
     headers: {
       "Content-Type": "application/json",
       "Authorization": `Bearer ${window.localStorage.getItem('token')}`,
     },
-    body: JSON.stringify({key: key, name: name}),
+    body: JSON.stringify({key: key, name: name, watts: watts.value, tempoCons: tempoCons.value}),
     method: 'POST'
   })
+  
   let res = await raw.json();
   if(res.status != 'ok'){
     $('.inesistente')[0].innerHTML = res.status

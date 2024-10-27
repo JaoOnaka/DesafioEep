@@ -5,15 +5,15 @@ class Default{
           window.localStorage.setItem('color', colorName)
         }
         let color = {main: null, sec: null, nav: null, back:null}
-        if(colorName == 'pink'){
+        if(colorName == 'green'){
           color.main = '#de5d83';
-          color.sec = '#d96285';
-          color.nav = '#b63f62';
+          color.sec = '#49ff38';
+          color.nav = '#007500';
           color.back = 'rgb(238, 234, 237)';
-        }else if(colorName == 'cyan'){
-          color.main = '#3ed1c2';
-          color.sec = '#76cfc6';
-          color.nav = '#009189';
+        }else if(colorName == 'orange'){
+          color.main = '#ffd000';
+          color.sec = '#fffb00';
+          color.nav = '#ffa601';
           color.back = 'rgb(234, 238, 238)';
         }else{
           color.main = '#03a9f4';
